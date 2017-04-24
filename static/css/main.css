@@ -1120,15 +1120,18 @@ li.fancybox-thumbs-loading {
   font-style: normal;
 }
 .page {
-  /*width: 1900px;*/
+  width: 100%;
+  min-width: 1280px;
   font-family: 'ProximaNova', sans-serif;
   background: #fffadf;
 }
 .page__inner {
   position: relative;
-  width: 1730px;
+  width: 100%;
+  min-width: 1170px;
   margin: 0 auto;
-  padding: 18px 0;
+  padding: 0 5%;
+  padding: 18px 5%;
 }
 .page__inner::after {
   display: inline-block;
@@ -1142,7 +1145,7 @@ li.fancybox-thumbs-loading {
 .page__main {
   display: inline-block;
   float: right;
-  width: 1330px;
+  width: 78%;
 }
 *,
 input[type="search"] {
@@ -1155,11 +1158,21 @@ a {
   display: inline-block;
   vertical-align: top;
 }
+@media (max-width: 1770px) {
+  .page__main {
+    width: 74%;
+  }
+}
+@media (max-width: 1560px) {
+  .page__main {
+    width: 70%;
+  }
+}
 .banner {
   position: relative;
   margin-bottom: 50px;
   width: 100%;
-  height: 633px;
+  height: auto;
   box-shadow: 0 4px 2px -1px rgba(0, 0, 0, 0.1);
 }
 .banner__list {
@@ -1176,9 +1189,92 @@ a {
   opacity: 0;
   -webkit-transition: .5s;
   transition: .5s;
+  width: inherit;
+}
+.banner__list-item img {
+  width: 100%;
 }
 .banner__list-item.is-selected {
   opacity: 1;
+}
+.basket {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  float: right;
+  top: 50px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  padding: 17px 17px 17px 140px;
+  vertical-align: top;
+  border: 2px solid #fffadf;
+  border-radius: 4px;
+}
+.basket::before {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 2px;
+  height: 100%;
+  content: '';
+  background: #fffadf;
+}
+.basket__link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.basket__i {
+  z-index: -1;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: 40px;
+  display: inline-block;
+  background-image: url(../img/png-sprite/96dpi/sprite.png);
+  background-position: 0px -48px;
+  width: 43px;
+  height: 39px;
+  background-size: 104px, 87px;
+  background-repeat: no-repeat;
+}
+.basket__i::before {
+  position: absolute;
+  top: 0;
+  right: -15px;
+  width: 25px;
+  height: 25px;
+  content: '';
+  background-color: #ea6429;
+  border-radius: 50%;
+}
+.basket__i::after {
+  position: absolute;
+  top: 2.5px;
+  right: -6px;
+  content: attr(data-count);
+  font-size: 15px;
+  font-style: normal;
+}
+.basket__value {
+  font-weight: bold;
+}
+.basket__value::after {
+  content: ' руб.';
+}
+@media (max-width: 1560px) {
+  .basket {
+    padding: 17px 10px 17px 125px;
+  }
+  .basket__i {
+    left: 30px;
+  }
 }
 .block {
   display: block;
@@ -1258,85 +1354,17 @@ a {
   font-weight: normal;
   border: none;
 }
-.basket {
-  position: relative;
-  display: inline-block;
-  padding: 17px 17px 17px 140px;
-  vertical-align: top;
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  right: 0;
-  border: 2px solid #fffadf;
-  border-radius: 4px;
-}
-.basket::before {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  width: 2px;
-  height: 100%;
-  content: '';
-  background: #fffadf;
-}
-.basket__link {
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-.basket__i {
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  left: 40px;
-  display: inline-block;
-  background-image: url(../img/png-sprite/96dpi/sprite.png);
-  background-position: 0px -48px;
-  width: 43px;
-  height: 39px;
-  background-size: 104px, 87px;
-  background-repeat: no-repeat;
-}
-.basket__i::before {
-  position: absolute;
-  top: 0;
-  right: -15px;
-  width: 25px;
-  height: 25px;
-  content: '';
-  background-color: #ea6429;
-  border-radius: 50%;
-}
-.basket__i::after {
-  position: absolute;
-  top: 2.5px;
-  right: -6px;
-  content: attr(data-count);
-  font-size: 15px;
-  font-style: normal;
-}
-.basket__value {
-  font-weight: bold;
-}
-.basket__value::after {
-  content: ' руб.';
-}
 .footer {
   color: white;
   background-color: #793029;
 }
 .footer__inner {
-  padding: 25px 0;
   position: relative;
-  width: 1730px;
+  width: 100%;
+  min-width: 1170px;
   margin: 0 auto;
+  padding: 0 5%;
+  padding: 25px 5%;
 }
 .footer__contacts {
   display: table-cell;
@@ -1366,9 +1394,14 @@ a {
 }
 .footer__copyright {
   position: absolute;
-  right: 0;
+  right: 5%;
   bottom: 25px;
   font-size: 15px;
+}
+@media (max-width: 1420px) {
+  .footer__contacts {
+    padding-right: 80px;
+  }
 }
 .form {
   position: relative;
@@ -1442,18 +1475,21 @@ a {
 }
 .header__inner {
   position: relative;
-  width: 1730px;
+  width: 100%;
+  min-width: 1170px;
   margin: 0 auto;
+  padding: 0 5%;
 }
 .header__main {
   position: relative;
   color: white;
+  height: 100px;
   margin: 0;
   background-color: #793029;
 }
 .header__navigation {
   display: inline-block;
-  padding: 12px 0 12px 95px;
+  padding: 12px 0 12px 5%;
   margin: 15px 0;
   background: #793029;
   border-radius: 0 5px 5px 0;
@@ -1495,6 +1531,19 @@ a {
   height: 43px;
   background-size: 104px, 87px;
   background-repeat: no-repeat;
+}
+@media (max-width: 1560px) {
+  .header__link {
+    margin-left: 10%;
+  }
+}
+@media (max-width: 1420px) {
+  .header__link {
+    margin-left: 8%;
+  }
+  .header__link::before {
+    left: -70px;
+  }
 }
 .item {
   position: relative;
@@ -1596,6 +1645,15 @@ a {
   height: 100%;
   content: '';
 }
+@media (max-width: 1420px) {
+  .logotype {
+    padding: 30px 0 23px 0;
+    height: 100px;
+  }
+  .logotype img {
+    width: 80%;
+  }
+}
 .company {
   display: table;
 }
@@ -1633,6 +1691,16 @@ a {
 .menu__link_active {
   font-weight: bold;
 }
+@media (max-width: 1560px) {
+  .menu__item {
+    margin-right: 50px;
+  }
+}
+@media (max-width: 1420px) {
+  .menu__item {
+    margin-right: 40px;
+  }
+}
 .modal {
   display: none;
   padding: 60px 90px;
@@ -1654,8 +1722,8 @@ a {
 .search {
   position: absolute;
   bottom: 20px;
-  right: 86px;
-  width: 370px;
+  right: 5%;
+  width: 15%;
   height: 37px;
 }
 .search__field {
@@ -1695,7 +1763,7 @@ a {
   color: #793029;
 }
 .slider__list {
-  width: 1266px;
+  width: 96%;
   margin: 0 auto;
   padding: 35px 0 25px;
   list-style: none;

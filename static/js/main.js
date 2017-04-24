@@ -25,9 +25,6 @@ $(function () {
 "use strict";
 
 $(function () {});
-"use strict";
-
-$(function () {});
 'use strict';
 
 $(function () {
@@ -53,6 +50,9 @@ $(function () {
         }
     });
 });
+"use strict";
+
+$(function () {});
 "use strict";
 
 $(function () {});
