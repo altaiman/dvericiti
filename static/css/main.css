@@ -1120,7 +1120,7 @@ li.fancybox-thumbs-loading {
   font-style: normal;
 }
 .page {
-  width: 1900px;
+  /*width: 1900px;*/
   font-family: 'ProximaNova', sans-serif;
   background: #fffadf;
 }
